@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<!-- ******** スクリプト ************ -->
+<script>
+    function toggleBackground(imgNo) {
+
+        var body = document.body;
+
+        // クラスがついていなかったら、'changed-bg' クラスを追加して背景色を切り替える
+        switch (imgNo) {
+            case 1:
+                document.getElementById("aaaa").innerText = "メインホールです。6人席もありますので、全体的にゆったりとしております。";
+
+                const p1 = document.getElementById("aaaa");
+                p1.style = "visible";
+
+                body.classList.add("changed-bg1");      /* 背景差し替え */
+
+                break;
+
+            case 2:
+                document.getElementById("aaaa").innerText = "カウンター席です。お一人様から入れます。私でよろしければ、お相手させいただきます。";
+
+                const p2 = document.getElementById("aaaa");
+                p2.style = "visible";
+
+                body.classList.add("changed-bg2");
+
+                break;
+
+            case 3:
+                document.getElementById("aaaa").innerText = "Ｌ字型の奥のホールになります。こちらには丸形のテーブルが用意しておりますので、一人からでもご利用可能です。";
+
+                const p3 = document.getElementById("aaaa");
+                p3.style = "visible";
+
+                body.classList.add("changed-bg3");
+
+                break;
+
+        }
+    };
+
+    function toggleBackground_back() {
+/*        document.getElementById("aaaa").innerText = "店内はオープンな広いワンフロアな構成で、テーブルは四角と丸の２種類を用意しました。店外で食欲も可能ですが、その場合、ご料金は先払いになりますので、よろしくお願いいたします。";   */
+
+        var body = document.body;
+        // クラスがついていたら、解放して元の背景色に戻す
+        body.classList.remove("changed-bg1");
+        body.classList.remove("changed-bg2");
+        body.classList.remove("changed-bg3");
+
+
+    };
+
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>未来創造堂</title>
+    <meta name="description" content="未来創造堂TOP">
+
+    <!-- オリジナルCSS -->
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+    <div class="bgimg020405">
+        <div class="owner04-img" onclick="toggleBackground_back()"></div>
+
+        <ul class="container">
+            <li><a href="index.html" class="topimage"></a></li>
+            <li><a href="page02.html">お知らせ</a></li>
+            <li><a href="page03.html">メニュー</a></li>
+            <li><a href="page04.html">店内ご案内</a></li>
+            <li><a href="page05.html">店舗ご案内</a></li>
+            <li><a href="page06.html">わたし達について</a></li>
+        </ul>
+
+        <div class="msg04">
+            <div style="text-align:center">
+                <div>
+                    <img src="img/bg04a.png" onclick="toggleBackground(1)" alt="店内" width="30%">
+                    <img src="img/bg04b.png" onclick="toggleBackground(2)" alt="店内カウンター" width="30%">
+                    <img src="img/bg04c.png" onclick="toggleBackground(3)" alt="店内丸テーブル" width="30%">
+                </div>
+                <p id="main04msg" style="text-align:left">
+                    店内はオープンな広いワンフロアな構成で、テーブルは四角と丸の２種類を用意しました。
+                    店外で食欲も可能ですが、その場合、ご料金は先払いになりますので、よろしくお願いいたします。
+                </p>
+            </div>
+        </div>
+
+        <div class="msg04a" hidden>
+            <p id="aaaa">
+            </p>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

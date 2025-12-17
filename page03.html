@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- オリジナルCSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<!-- ******** スクリプト ************ -->
+<script>
+    function toggleBackground(imgNo) {
+
+        var body = document.body;
+
+        // クラスがついていなかったら、'changed-bg' クラスを追加して背景色を切り替える
+        switch (imgNo) {
+            case 1:     /* ケーキ */
+                document.getElementById("msg").innerText = "★ケーキ！！";
+                body.classList.add("changed-bg30a");
+                break;
+            case 2:     /* ドリンク */
+                document.getElementById("msg").innerText = "★ドリンク！！";
+                body.classList.add("changed-bg30b");
+                break;
+            case 3:     /* パフェアイス */
+                document.getElementById("msg").innerText = "★パフェアイス！！";
+                body.classList.add("changed-bg30c");
+                break;
+            case 4:     /* ライスボール */
+                document.getElementById("msg").innerText = "★ライスボール！！";
+                body.classList.add("changed-bg30d");
+                break;
+            case 5:     /* ランチパフェ */
+                document.getElementById("msg").innerText = "★ランチパフェ！！";
+                body.classList.add("changed-bg30e");
+                break;
+            case 6:     /* パンケーキ */
+                document.getElementById("msg").innerText = "★パンケーキ！！";
+                body.classList.add("changed-bg30f");
+                break;
+            case 7:     /* パスタ */
+                document.getElementById("msg").innerText = "★パスタ！！";
+                body.classList.add("changed-bg30g");
+                break;
+        }
+    }
+
+    function bg03_back() {
+
+        var body = document.body;
+        // クラスがついていたら、元の背景色に戻す
+        body.classList.remove("changed-bg30a");
+        body.classList.remove("changed-bg30b");
+        body.classList.remove("changed-bg30c");
+        body.classList.remove("changed-bg30d");
+        body.classList.remove("changed-bg30e");
+        body.classList.remove("changed-bg30f");
+        body.classList.remove("changed-bg30g");
+
+        document.getElementById("msg").innerText = "当店の未来で流行しているメニューでございます、興味のある商品を選んでください。";
+
+    }
+
+
+</script>
+
+<body>
+
+    <div class="bgimg03">
+        <div class="owner03-img" onclick="bg03_back()"></div>
+
+        <ul class="container">
+            <li><a href="index.html" class="topimage"></a></li>
+            <li><a href="page02.html">お知らせ</a></li>
+            <li><a href="page03.html">メニュー</a></li>
+            <li><a href="page04.html">店内ご案内</a></li>
+            <li><a href="page05.html">店舗ご案内</a></li>
+            <li><a href="page06.html">わたし達について</a></li>
+        </ul>
+
+        <div class="image-container">
+            <img src="img/bg03a.png" alt="皿1" class="menu03a" onclick="toggleBackground(1)">
+            <img src="img/bg03b.png" alt="皿2" class="menu03b" onclick="toggleBackground(2)">
+            <img src="img/bg03c.png" alt="皿3" class="menu03c" onclick="toggleBackground(3)">
+            <img src="img/bg03d.png" alt="皿1" class="menu03d" onclick="toggleBackground(4)">
+            <img src="img/bg03e.png" alt="皿2" class="menu03e" onclick="toggleBackground(5)">
+            <img src="img/bg03f.png" alt="皿3" class="menu03f" onclick="toggleBackground(6)">
+            <img src="img/bg03g.png" alt="皿3" class="menu03g" onclick="toggleBackground(7)">
+
+            <div class="msg03">
+                <p id="msg">
+                    当店の未来で流行しているメニューでございます、興味のある商品を選んでください。
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
