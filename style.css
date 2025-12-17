@@ -1,0 +1,961 @@
+@charset "utf-8";
+
+*{
+
+    font-family: "ＭＳ Ｐ明朝","游明朝", "Yu Mincho", serif;    /* 明朝体指定 */
+    text-decoration: none;      /*リンク等の下線なくす  */
+
+    font-size: 18px;
+
+    background-attachment: fixed;           /* 背景位置固定（スクロール無視） */
+
+    max-width: 100%;
+    max-height: 1200px;
+
+}
+
+body{
+    text-align: center;
+
+}
+
+
+.bgimg01{   /* トップ */
+    /* display: block; */
+    /* position: absolute; */
+
+    background-repeat: no-repeat;       /* 繰り返し表示しない */
+
+  /* background-image: url("img/bg01a.png"); */
+  background-size:100%; /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+
+/*  background-size: 100%;*/
+
+    width: 100%;
+    height: 1200px;
+
+  border: 2px solid;
+  color: blue;
+
+  animation: image_anime 5s ease infinite; /* 5秒のアニメーションを繰り返す */
+
+    /* width: clamp( 1080px, 100%, 1980px); */
+}
+@keyframes image_anime {    /* 客のアニメーション */
+  0% {
+    background-image: url("img/bg01a.png"); /* 背景画像1を指定 */
+  }
+  30% {
+    background-image: url("img/bg01b.png"); /* 背景画像2を指定 */
+  }
+  60% {
+    background-image: url("img/bg01c.png"); /* 背景画像1を指定 */
+  }
+  100% {
+    background-image: url("img/bg01a.png"); /* 背景画像1を指定 */
+  }
+}
+
+
+
+
+
+.bgimg020405{
+    position: relative;
+
+    background-repeat: no-repeat;       /* 繰り返し表示しない */
+    background-image: url("img/bg020405.png");
+    background-size: 100%; /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+
+    width: 100%;
+    height: 1080px;
+
+    left: 100% 0%;
+
+    border: 2px solid;
+    color: blue;
+
+    z-index: 1; 
+
+    transition-duration: 1s;    /* これを入れた方が止まらない気がする */
+    animation: image_anime2 0.01s ease infinite; /* 5秒のアニメーションを繰り返す */
+}
+@keyframes image_anime2 {
+    0% {
+      background-image: url("img/bg020405r.png"), url("img/bg020405.png"); /* 背景画像1を指定 */
+    }
+    50% {
+      background-image: url("img/bg020405.png"), url("img/bg020405.png"); /* 背景画像1を指定 */
+    }
+    0% {
+        background-image: url("img/bg020405r.png"), url("img/bg020405.png"); /* 背景画像1を指定 */
+      }
+  }
+
+.map{
+    position: relative;
+
+    background-repeat: no-repeat;       /* 繰り返し表示しない */
+
+    background-image: url("img/bg05map.png");
+
+    background-size: 46%; /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+    width: 100%;
+    height: 1080px;
+
+    background-position: 60% 32%;
+
+    border: 2px solid;
+    color: blue;
+
+
+}
+
+.bgimg03{   /* メニューを見せるテーブル */
+    background-repeat: no-repeat;       /* 繰り返し表示しない */
+    background-image: url("img/bg03.png");
+    background-size:100%; /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+  
+    width: 100%;
+    height: 1080px;
+  
+    border: 2px solid;
+    color: blue;
+}
+.image-container {
+    position: relative; /* 子要素の基準点とする */
+    width: 100%;       /* コンテナの幅 */
+    height: 980px;      /* コンテナの高さ */
+    top: 10%;
+    border: 2px solid white; /* わかりやすいように枠線を表示 */
+}
+
+/*----------------------- 皿a ケーキ------------------*/
+.menu03a{   /* 皿a */
+    position: absolute;
+
+    /* background-image: url("img/bg03a.png");	背景を差し替える */
+
+    transform: translate(-50%, -50%);
+    width: 30%;     /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+    left: 48%;      /*----- X */
+    top: 20%;       /*----- Y */
+}
+.menu03a:hover{     /* 光る */
+    transition-duration: 1s;
+    filter: brightness(2);
+}
+.changed-bg30a>div{      /* 皿a をアップ */
+    position: relative;
+
+    background-repeat: no-repeat;           /* 繰り返し表示しない */
+
+/*    background: (ellipse at center,rgb(255, 187, 0, 1),rgb(0,0,255, 1)),url("img/bg03a.png");	/* 背景を差し替える */
+    background-image: url("img/bg03a.png"), radial-gradient(rgb(255, 183, 0, 0.5), #02006f57);
+    background-size: cover;
+    background-size:100%; /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+
+
+    transition-duration: 1s;
+
+    border: 2px solid;
+    color: red;
+
+    .image-container{
+        display: none;
+    }
+
+}
+
+/*----------------------- 皿b　ドリンク ------------------*/
+.menu03b{   /* 皿b */
+    position: absolute;
+
+    /* background-image: url("img/bg03b.png");	背景を差し替える */
+    transform: translate(-50%, -50%);
+
+    width: 22%;     /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+    left: 26%;  /*-------- X */
+    top: 28%;   /*-------- Y */
+}  
+.menu03b:hover{
+    transition-duration: 1s;
+    filter: brightness(2);
+}
+.changed-bg30b>div{      /* 皿b をアップ */
+    position: relative;
+
+    background-repeat: no-repeat;           /* 繰り返し表示しない */
+
+    background-image: url("img/bg03b.png"), radial-gradient(rgb(255, 183, 0, 0.5), #02006f57);
+    background-size: cover;
+    background-size:100%; /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+
+    transition-duration: 1s;
+
+    border: 2px solid;
+    color: red;
+
+    .image-container{
+        display: none;
+    }
+
+}
+
+/*----------------------- 皿c パフェアイス------------------*/
+.menu03c{   /* 皿c */
+    position: absolute;
+
+    /* background-image: url("img/bg03c.png");	背景を差し替える */
+    transform: translate(-50%, -50%);
+
+    width: 20%;     /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+    left: 68%;
+    top: 20%;
+}  
+.menu03c:hover{
+    transition-duration: 1s;
+    filter: brightness(2);
+}
+.changed-bg30c>div{      /* 皿c をアップ */
+    position: relative;
+
+    background-repeat: no-repeat;           /* 繰り返し表示しない */
+
+    background-image: url("img/bg03c.png"), radial-gradient(rgb(255, 183, 0, 0.5), #02006f57);
+    background-size: cover;
+    background-size:100%; /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+
+    transition-duration: 1s;
+
+    border: 2px solid;
+    color: red;
+
+    .image-container{
+        display: none;
+    }
+}
+
+/*----------------------- 皿d ライスボール------------------*/
+.menu03d{   /* 皿d */
+    position: absolute;
+
+    /* background-image: url("img/bg03d.png");	背景を差し替える */
+    transform: translate(-50%, -50%);
+
+    width: 20%;     /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+    left: 68%;      /*--------- X   */
+    top: 40%;       /*-------- Y    */
+}  
+.menu03d:hover{
+    transition-duration: 1s;
+    filter: brightness(2);
+}
+.changed-bg30d>div{      /* 皿d をアップ */
+    position: relative;
+
+    background-repeat: no-repeat;           /* 繰り返し表示しない */
+
+    background-image: url("img/bg03d.png"), radial-gradient(rgb(255, 183, 0, 0.5), #02006f57);
+    background-size: cover;
+    background-size:100%; /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+
+    transition-duration: 1s;
+
+    border: 2px solid;
+    color: red;
+
+    .image-container{
+        display: none;
+    }
+}
+
+/*----------------------- 皿eランチパフェェ------------------*/
+.menu03e{   /* 皿e */
+    position: absolute;
+
+    /* background-image: url("img/bg03e.png");	背景を差し替える */
+    transform: translate(-50%, -50%);
+
+    width: 34%;     /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+    left: 22%;      /*--------- X   */
+    top: 60%;       /*-------- Y    */
+}  
+.menu03e:hover{
+    transition-duration: 1s;
+    filter: brightness(2);
+}
+.changed-bg30e>div{      /* 皿e をアップ */
+    position: relative;
+
+    background-repeat: no-repeat;           /* 繰り返し表示しない */
+
+    background-image: url("img/bg03e.png"), radial-gradient(rgb(255, 183, 0, 0.5), #02006f57);
+    background-size: cover;
+    background-size:100%; /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+
+    transition-duration: 1s;
+
+    border: 2px solid;
+    color: red;
+
+    .image-container{
+        display: none;
+    }
+}
+
+
+
+/*----------------------- 皿f パンケーキ------------------*/
+.menu03f{   /* 皿f */
+    position: absolute;
+
+    /* background-image: url("img/bg03f.png");	背景を差し替える */
+    transform: translate(-50%, -50%);
+
+    width: 30%;     /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+    left: 45%;      /*--------- X   */
+    top: 60%;       /*-------- Y    */
+}  
+.menu03f:hover{
+    transition-duration: 1s;
+    filter: brightness(2);
+}
+.changed-bg30f>div{      /* 皿f をアップ */
+    position: relative;
+
+    background-repeat: no-repeat;           /* 繰り返し表示しない */
+
+    background-image: url("img/bg03f.png"), radial-gradient(rgb(255, 183, 0, 0.5), #02006f57);
+    background-size: cover;
+    background-size:100%; /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+
+    transition-duration: 1s;
+
+    border: 2px solid;
+    color: red;
+
+    .image-container{
+        display: none;
+    }
+}
+
+
+
+/*----------------------- 皿g パスタ------------------*/
+.menu03g{   /* 皿g */
+    position: absolute;
+
+    /* background-image: url("img/bg03g.png");	背景を差し替える */
+    transform: translate(-50%, -50%);
+
+    width: 22%;     /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+    left: 65%;      /*--------- X   */
+    top: 64%;       /*-------- Y    */
+}  
+.menu03g:hover{
+    transition-duration: 1s;
+    filter: brightness(2);
+}
+.changed-bg30g>div{      /* 皿g をアップ */
+    position: relative;
+
+    background-repeat: no-repeat;           /* 繰り返し表示しない */
+
+    background-image: url("img/bg03g.png"), radial-gradient(rgb(255, 183, 0, 0.5), #02006f57);
+    background-size: cover;
+    background-size:100%; /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+
+    transition-duration: 1s;
+
+    border: 2px solid;
+    color: red;
+
+    .image-container{
+        display: none;
+    }
+}
+
+
+
+
+/************* 店内紹介で背景を差し替える *****************/
+.changed-bg1>div{
+    position: relative;
+
+    background-repeat: no-repeat;           /* 繰り返し表示しない */
+    background-image: url("img/bg04a.png");	/* 背景を差し替える */
+    background-size:100%; /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+
+    width: 100%;
+    height: 1080px;
+
+    transition-duration: 1s;
+
+    .msg04{         /* メッセージを消す */
+        display: none;
+    }
+    .msg04a{         /* サブメッセージを出す */
+        display: block;
+    }
+    animation: pause;    /* 街灯のアニメーションを止める */
+
+    /* transition-duration: 1s; */
+    animation: image_anime4a 0.1s ease infinite; /* 店内のアニメーションを繰り返す */
+
+}
+@keyframes image_anime4a {
+0% {
+  background-image: url("img/bg010.gif"), url("img/bg04a.png"); /* 背景画像1を指定 */
+}
+50% {
+  background-image: url("img/bg010.gif"), url("img/bg04a.png"); /* 背景画像1を指定 */
+}
+0% {
+    background-image: url("img/bg010.gif"), url("img/bg04a.png"); /* 背景画像1を指定 */
+  }
+}
+
+
+.changed-bg2>div{
+    position: relative;
+
+    background-repeat: no-repeat;           /* 繰り返し表示しない */
+    background-image: url("img/bg04b.png");	/* 背景を差し替える */
+    background-size:100%; /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+
+    width: 100%;
+    height: 1080px;
+
+    transition-duration: 1s;
+
+    .msg04{         /* メッセージを消す */
+        display: none;
+    }
+    .msg04a{         /* サブメッセージを出す */
+        display: block;
+    }
+    animation: pause;    /* 街灯のアニメーションを止める */
+}
+
+.changed-bg3>div{
+    position: relative;
+
+    background-repeat: no-repeat;           /* 繰り返し表示しない */
+    background-image: url("img/bg04c.png");	/* 背景を差し替える */
+    background-size:100%; /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+
+    width: 100%;
+    height: 1080px;
+
+    .msg04{         /* メッセージを消す */
+        display: none;
+    }
+    .msg04a{         /* サブメッセージを出す */
+        display: block;
+    }
+    animation: pause;    /* 街灯のアニメーションを止める */
+}
+
+
+/*------------------------------------------------*/
+
+
+
+
+
+
+.bgimg06{ /* わたし達について */
+    background-repeat: no-repeat;       /* 繰り返し表示しない */
+    background-image: url("img/bg06.png");
+    background-size:100%; /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+
+    width: 100%;
+    height: 1080px;
+
+    border: 2px solid;
+    color: blue;
+}
+
+
+/************* 総合メニュー *****************/
+/*----- メニュー左上のロゴ -----*/
+.topimage{
+
+    position: absolute;
+    padding: 2% 8%;
+
+    background: url("img/top-menu.png");
+    background-repeat: no-repeat;       /* 繰り返し表示しない */
+/*    background-attachment: fixed;           /* 背景位置固定（スクロール無視） */
+
+    background-size:100%; /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+    background-position: center;
+    object-fit: cover;
+
+    left: 1%;
+    top: -60px;
+    bottom:-150%;
+
+    border: 2px solid blue;
+    /* width: 100%; */
+    /* height: 600px; */
+/*    object-fit: contain; /* 縦横比を保ちつつ、全体が収まるようにする */
+
+/*    width: 100%; */
+    /* left: 8px; */
+    /* top: -20px; */
+
+}
+
+html{
+    font-size: 11px;
+    background-color: rgba( 0, 0, 10, 1);   /* 赤枠外の色 */
+
+}
+
+.container{
+    display: flex;      /*コンテナを並列にする  */
+    flex: 1 auto;
+
+gap: 0px;
+
+    position: fixed;    /* トップ位置にメニュー固定 */
+
+    width: 100%;         /*全体の何パーセントに表示するか？*/
+    font-size: 2em;
+
+}
+
+
+ul{
+    padding-left: 16px;
+    list-style: none;       /* 項目右の「●」を消す */
+
+    background-color: rgba( 0, 0, 10, 0.5);   /* 枠外の色 */
+
+}
+
+li{
+    width: 16%;     /* 100%/6項目=16 */
+    text-align: center;
+
+}
+
+a{
+    color: rgba( 255,255,255,1);
+
+    display: block; /* 総合メニューのクリック範囲を広げる */
+    padding: 1.6rem;
+
+/*    margin-left: -0px;      /* メニュー間のクリックも反応するようにする */
+/*    margin-right: -0px;   */
+
+}
+a:hover{
+    color: rgba(204, 155, 7, 1);
+    background-color: rgba(10, 0, 119, 0.5);
+
+    transition-duration: 1s;
+}
+
+/************* コメント *****************/
+.msg{
+    position: absolute;
+
+    right: 1%;
+    width: 30%;
+
+/*    font-size: 1rpm;  */
+
+    text-align: left;
+
+    color: white;
+    background-color: rgba( 0, 0, 80, 0.5);
+    /* opacity: 0.5; */
+
+    height: 40rem;                           /* 紺色の下地の縦幅のサイズを指定    */
+
+    top: 18%;       /* 上からの位置 */
+    padding: 8px;
+}
+
+.msg02{
+    position: absolute;
+    background-color: rgba( 0, 0, 80, 0.5);
+
+/*    font-size: 1rpm;  */
+    text-align: left;
+    color: white;
+
+    max-height: 1080px;                           /* 縦幅のサイズを指定    */
+
+    top: 25%;       /* 上からの位置 */
+    width: 50%;
+    left: 30%;
+    height: 38%;
+    
+    padding: 8px;   /* 枠中のテキストの左を空ける */}
+
+
+p{
+    position: absolute;
+
+    line-height: 2.4rem;
+    font-size: 1rpm;
+
+    margin: 0;
+
+}
+
+.msg03{
+    position: relative;
+    background-color: rgba( 0, 0, 80, 0.5);
+
+/*    font-size: 1rpm;  */
+    text-align: left;
+    color: white;
+
+    max-height: 1080px;                           /* 縦幅のサイズを指定    */
+
+    top: 46%;       /* 上からの位置 */
+    width: 60%;
+    left: 10%;
+    height: 10rem;
+    
+    padding: 8px;   /* 枠中のテキストの左を空ける */
+
+}
+
+.msg04{
+    position: relative;
+    background-color: rgba( 0, 0, 80, 0.5);
+
+/*    font-size: 1rpm;  */
+    text-align: left;
+    color: white;
+
+    max-height: 1080px;                           /* 縦幅のサイズを指定    */
+
+    top: 34%;       /* 上からの位置 */
+    width: 70%;
+    left: 4%;
+    height: 22rem;
+    
+    padding: 8px;   /* 枠中のテキストの左を空ける */
+
+}
+
+.msg04a{
+    position: relative;
+    background-color: rgba( 0, 0, 80, 0.5);
+
+    text-align: left;
+    color: white;
+
+    max-height: 1080px;                           /* 縦幅のサイズを指定    */
+
+    top: 50%;       /* 上からの位置 */
+    width: 70%;
+    left: 4%;
+    height: 6rem;
+    
+    padding: 8px;   /* 枠中のテキストの左を空ける */
+
+}
+.msg04>div>div>img:nth-child(1):hover{
+    transition-duration: 1s;
+    filter: brightness(2);
+}
+.msg04>div>div>img:nth-child(2):hover{
+    transition-duration: 1s;
+    filter: brightness(2);
+}
+.msg04>div>div>img:nth-child(3):hover{
+    transition-duration: 1s;
+    filter: brightness(2);
+}
+
+/*
+grid-template -colums: repeat(4,1fr);
+grid -gap: 10px;
+width 1980px;
+
+grid-column: 1/3;
+gridp-row: 2/4;
+*/
+
+
+.msg05{
+    position: relative;
+    background-color: rgba( 0, 0, 80, 0.5);
+
+    text-align: left;
+    color: white;
+
+    max-height: 1080px;                           /* 縦幅のサイズを指定    */
+
+    top: 50%;       /* 上からの位置（青のすかし枠） */
+    width: 70%;
+    left: 26%;
+    height: 5rem;
+
+    padding: 8px;   /* 枠中のテキストの左を空ける */
+
+}
+
+
+
+
+.msg06{
+    position: absolute;
+    background-color: rgba( 0, 0, 80, 0.5);
+
+/*    font-size: 1rpm;  */
+    text-align: left;
+    color: white;
+
+    max-height: 1080px;                           /* 縦幅のサイズを指定    */
+
+    top: 18%;       /* 上からの位置 */
+    width: 50%;
+    left: 25%;
+    height: 70%;
+    
+    padding: 8px;   /* 枠中のテキストの左を空ける */
+
+}
+
+.font40px{      /* 会社名 */
+    color: rgb(204, 155, 7);
+    font-size: 40px;
+
+    bottom:    2%;
+    right:     4%; 
+}
+.font20px{      /* メールアドレス */
+    color: rgb(204, 155, 7);
+    font-size: 20px;
+/*    margin: auto  10% 10% 0;     /* 上　右　下　左 */
+    bottom:    1%;
+    right:     16%; 
+
+}
+
+.sign{
+    position: absolute;
+
+    /* background-image: url("img/bg03e.png");	背景を差し替える */
+    transform: translate(-50%, -50%);
+
+    width: 40%;     /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+    left: 20%;      /*--------- X   */
+    bottom: -10%;       /*--------- y   */
+
+    z-index: 999;
+}
+
+/*************　オーナー *****************/
+
+/* オーナー */
+
+.img:nth-of-type(1){
+    transform: scale(0.5) translate(-200%, -50%);
+}
+
+.owner11-img{
+    position: absolute;
+/*    background-position: center; */
+    background-image: url("img/owner01.gif");
+    background-repeat: no-repeat;       /* 繰り返し表示しない */
+
+    background-attachment: fixed;           /* 背景位置固定（スクロール無視） */
+
+/*    background-position: -190px 50px;   /* -170px 112px;*/
+/*    background-attachment: fixed;*/
+
+    /* padding: -700px; */
+    /* bottom: 0; */
+
+    /*    background-size:cover;                 /* 画像のサイズを指定    */
+/*    background-size: 70%; /*cover;         画像のサイズを指定   
+
+/*    top: 530%;      /* 264px; */
+/*    max-width: 700px;                            /* 横幅のサイズを指定    */
+/*    max-height: 1080px;                           /* 縦幅のサイズを指定    */
+
+/*    background-size: cover; /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+    /* top: -120px; */
+
+    /* width: 100%; */
+    /* height: 600px; */
+
+    background-position: bottom 0% left -50%;
+    background-size: 60%;
+    top:10%;
+
+    width: 100%;    /* 画像の表示される横サイズ */
+    height: 100%;   /* 画像の表示される縦サイズ */
+
+
+    /*    object-fit: contain; /* 縦横比を保ちつつ、全体が収まるようにする */
+}
+
+.owner02-img{
+    position: absolute;
+
+    background-image: url("img/owner02.gif");
+    background-repeat: no-repeat;       /* 繰り返し表示しない */
+
+    background-attachment: fixed;           /* 背景位置固定（スクロール無視） */
+
+    background-position: bottom 0% left 4%; /* 左側 */
+    background-size: 22%;
+    top:10%;
+
+    width: 100%;    /* 画像の表示される横サイズ */
+    height: 100%;   /* 画像の表示される縦サイズ */
+
+}
+
+.owner03-img{
+    position: absolute;
+
+    background-image: url("img/owner03.gif");
+    background-repeat: no-repeat;       /* 繰り返し表示しない */
+
+    background-attachment: fixed;           /* 背景位置固定（スクロール無視） */
+
+    background-position: bottom 0% right 2%;    /* 右側 */
+    background-size: 26%;
+    top:10%;
+
+    width: 100%;    /* 画像の表示される横サイズ */
+    height: 100%;   /* 画像の表示される縦サイズ */
+
+}
+
+.owner04-img{   /* 店舗案内（右） */
+    position: absolute;
+
+    background-image: url("img/owner04.gif");
+    background-repeat: no-repeat;       /* 繰り返し表示しない */
+
+    background-attachment: fixed;           /* 背景位置固定（スクロール無視） */
+
+    background-position: bottom 0% right 2%;    /* 右側 */
+    background-size: 30%;
+    top:10%;
+
+    width: 100%;    /* 画像の表示される横サイズ */
+    height: 100%;   /* 画像の表示される縦サイズ */
+
+}
+
+.owner05-img{   /* 店舗案内（左） */
+    position: absolute;
+
+    background-image: url("img/owner05.gif");
+    background-repeat: no-repeat;       /* 繰り返し表示しない */
+
+    background-attachment: fixed;           /* 背景位置固定（スクロール無視） */
+
+    background-position: bottom 0% left 4%; /* 左側 */
+    background-size: 22%;
+    top:10%;
+
+
+    width: 100%;    /* 画像の表示される横サイズ */
+    height: 100%;   /* 画像の表示される縦サイズ */
+
+}
+
+.owner06-img{
+    position: absolute;
+
+    background-image: url("img/owner06.gif");
+    background-repeat: no-repeat;       /* 繰り返し表示しない */
+
+    background-attachment: fixed;           /* 背景位置固定（スクロール無視） */
+
+
+    background-position: center;
+    background-size: 100%;
+    
+    top:10%;
+
+    width: 100%;    /* 画像の表示される横サイズ */
+    height: 100%;   /* 画像の表示される縦サイズ */
+}
+
+
+
+
+/*************** 新商品 ****************/
+.new-item01{
+    position: absolute;
+
+    background: url("img/item01.png");
+    background-repeat: no-repeat;       /* 繰り返し表示しない */
+
+    top: 74%;
+    left: 62%;
+
+    background-size: 20%;
+
+    width: 100%;
+    height: 100%;
+}
+.new-item02{
+    position: absolute;
+
+    background: url("img/item02.png");
+    background-repeat: no-repeat;       /* 繰り返し表示しない */
+
+    top: 60%;
+    left: 74%;
+
+    background-size: 24%;
+
+    width: 100%;
+    height: 100%;
+}
+.new-item03{
+    position: absolute;
+
+    background: url("img/item03.png");
+    background-repeat: no-repeat;       /* 繰り返し表示しない */
+
+    top: 64%;
+    left: 87%;
+
+    background-size: 10%;
+
+    width: 100%;
+    height: 100%;
+}
+
+/*************** フッター **************/
+footer{
+    position: absolute;
+
+    color:white;
+    background-color: rgba( 0, 0, 0, 0.5);   /* 枠外の色 */
+    background-position: 90%;
+
+    text-align: left;   /* 文字は左に表示 */
+    padding-left: 2rem;
+
+    top: 90%;       /* 画面の上部からの位置 */
+
+/*    vertical-align: top;  */
+
+    width: 100%;    /* 左右一杯に黒帯を引く */
+    height: 2em;     /* 帯の太さ */
+
+    padding-top: 12px;
+
+    z-index: 999;
+}
+
+
