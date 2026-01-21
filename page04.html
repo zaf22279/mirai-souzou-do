@@ -3,6 +3,7 @@
 
 <!-- ******** スクリプト ************ -->
 <script>
+
     function toggleBackground(imgNo) {
 
         var body = document.body;
@@ -25,8 +26,34 @@
                 const p2 = document.getElementById("aaaa");
                 p2.style = "visible";
 
-                body.classList.add("changed-bg2");
+                if (p2.classList.contains('changed-bg2')) {
+                    alert("***クリックされました！");
 
+                    body.classList.remove("changed-bg2");
+
+                } else {
+                    body.classList.add("changed-bg2");
+                    //                    p2.classList.add("changed-bg2");
+                }
+                //----------------- うまく動かない
+                // <video>要素を作成
+                //                const video = document.createElement('video');
+                /*
+                                video.autoplay = true;
+                                video.loop = true;
+                                video.muted = true;
+                                video.playsInline = true; // camelCaseで記述
+                                /*                video.className = 'back-video';*/
+
+                // <source>要素を作成
+                /*              const source = document.createElement('source'); */
+                /*
+                                video.src = 'img/bg04b.mp4';
+                                video.type = 'video/mp4';
+                                // 組み立ててDOMに追加
+                                video.load();
+                                video.play();
+                */
                 break;
 
             case 3:
@@ -40,10 +67,32 @@
                 break;
 
         }
+
+        /*
+                document.getElementById('play-button').addEventListener('click', function () {
+                    document.getElementById('video-container').innerHTML = '<iframe width="560" height="315" src="img/bg04b.mp4" frameborder="0" allowfullscreen></iframe>';
+                    document.getElementById('modal').style.display = 'block';
+                });
+                document.getElementById('close-modal').addEventListener('click', function () {
+                    document.getElementById('video-container').innerHTML = ''; // 動画を消す
+                    document.getElementById('modal').style.display = 'none';
+                });
+        */
+        /*
+                const thumbnail = document.getElementById('thumbnail');
+                const video = document.getElementById('myVideo');
+        
+                thumbnail.addEventListener('click', () => {
+                    thumbnail.style.display = 'none'; // サムネイルを隠す
+                    video.style.display = 'block';    // 動画を表示
+                    video.play();                     // 動画を再生
+                });
+        */
+
     };
 
     function toggleBackground_back() {
-/*        document.getElementById("aaaa").innerText = "店内はオープンな広いワンフロアな構成で、テーブルは四角と丸の２種類を用意しました。店外で食欲も可能ですが、その場合、ご料金は先払いになりますので、よろしくお願いいたします。";   */
+        /*        document.getElementById("aaaa").innerText = "店内はオープンな広いワンフロアな構成で、テーブルは四角と丸の２種類を用意しました。店外で食欲も可能ですが、その場合、ご料金は先払いになりますので、よろしくお願いいたします。";   */
 
         var body = document.body;
         // クラスがついていたら、解放して元の背景色に戻す
@@ -51,8 +100,18 @@
         body.classList.remove("changed-bg2");
         body.classList.remove("changed-bg3");
 
-
     };
+
+    // 現在時刻を取得して表示する
+    function Time() {
+        var realTime = new Date();
+        var hour = realTime.getHours();
+        var minutes = realTime.getMinutes();
+        var seconds = realTime.getSeconds();
+        var text = hour + ":" + minutes + ":" + seconds;
+        document.getElementById("real-time").innerHTML = text;
+    }
+    setInterval('Time()', 1000);
 
 </script>
 
@@ -60,7 +119,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>未来創造堂</title>
+    <title>未来創造堂-FLOOR</title>
     <meta name="description" content="未来創造堂TOP">
 
     <!-- オリジナルCSS -->
@@ -69,9 +128,11 @@
 
 </head>
 
-<body>
-    <div class="bgimg020405">
-        <div class="owner04-img" onclick="toggleBackground_back()"></div>
+<body> <!--- </body> onclick="myFunction()"> --->
+    <div class="bgimg020405" onclick="myFunction()">
+        <div class=" owner04-img" onclick="toggleBackground_back()"></div>
+
+        <font color="white">現在時刻は<span id="real-time"></span>です　空席あります</font>
 
         <ul class="container">
             <li><a href="index.html" class="topimage"></a></li>
@@ -80,27 +141,41 @@
             <li><a href="page04.html">店内ご案内</a></li>
             <li><a href="page05.html">店舗ご案内</a></li>
             <li><a href="page06.html">わたし達について</a></li>
+            <li><a href="https://mirai73.wordpress.com/"><img src="img/icon-smf.png" alt="" width="15%"></a></li>
         </ul>
 
         <div class="msg04">
             <div style="text-align:center">
                 <div>
-                    <img src="img/bg04a.png" onclick="toggleBackground(1)" alt="店内" width="30%">
-                    <img src="img/bg04b.png" onclick="toggleBackground(2)" alt="店内カウンター" width="30%">
-                    <img src="img/bg04c.png" onclick="toggleBackground(3)" alt="店内丸テーブル" width="30%">
+                    <img src="img/bg04a.gif" onclick="toggleBackground(1)" alt="店内" width="30%">
+                    <!---                   <img src="img/bg04b.png" onclick="toggleBackground(2)" alt="店内カウンター" width="30%"> -->
+                    <img src="img/bg04b.gif" onclick="toggleBackground(2)" alt="店内丸テーブル" width="30%">
+                    <img src="img/bg04c.gif" onclick="toggleBackground(3)" alt="店内丸テーブル" width="30%">
+
+                    <!-- クリック対象の画像
+                    <img src="img/bg04b.png" alt="画像をクリック" class="click-image" id="playBtn" width="30%">
+                -->
+
                 </div>
                 <p id="main04msg" style="text-align:left">
+                    <br>
                     店内はオープンな広いワンフロアな構成で、テーブルは四角と丸の２種類を用意しました。
                     店外で食欲も可能ですが、その場合、ご料金は先払いになりますので、よろしくお願いいたします。
                 </p>
             </div>
         </div>
+        <!---
+        <div class="video-container">
+            <video autoplay loop muted playsinline class="back-video">
+                <source src="img/bg04b.mp4" type="video/mp4">
+            </video>
+        </div>
+-->
 
         <div class="msg04a" hidden>
             <p id="aaaa">
             </p>
         </div>
-
 
     </div>
 

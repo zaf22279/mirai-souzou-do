@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>未来創造堂-MENU</title>
 
     <!-- オリジナルCSS -->
     <link rel="stylesheet" href="style.css">
@@ -13,38 +13,49 @@
 
 <!-- ******** スクリプト ************ -->
 <script>
+
     function toggleBackground(imgNo) {
+        //        alert("背景がクリックされました！");
 
         var body = document.body;
+
+        const p2 = document.getElementById("aaaa");
 
         // クラスがついていなかったら、'changed-bg' クラスを追加して背景色を切り替える
         switch (imgNo) {
             case 1:     /* ケーキ */
-                document.getElementById("msg").innerText = "★ケーキ！！";
-                body.classList.add("changed-bg30a");
+                document.getElementById("aaaa").innerText = "わたし達のデザインするケーキです。誕生日やクリスマスでの予約も受け付けておりますので、ぜひとも一度、お友達と食べてみてくださいませ。";
+                p2.style = "visible";
+                body.classList.add("changed-bg30a");    /* 背景差し替え */
                 break;
             case 2:     /* ドリンク */
-                document.getElementById("msg").innerText = "★ドリンク！！";
+                document.getElementById("aaaa").innerText = "わたし達、自慢のドリンクになります。宙に浮かぶ、レモンティー、アルコールの入ったホットコーヒー、７色の味が楽しめるドリンクなど、取り揃えております。";
+                p2.style = "visible";
                 body.classList.add("changed-bg30b");
                 break;
             case 3:     /* パフェアイス */
-                document.getElementById("msg").innerText = "★パフェアイス！！";
+                document.getElementById("aaaa").innerText = "当店のアイスパフェでございます。透明のソフトクリームは、わたし達の時代に開発されたもので、味は従来のミルクよりも、軽くとてもなめらかな物でございます。";
+                p2.style = "visible";
                 body.classList.add("changed-bg30c");
                 break;
             case 4:     /* ライスボール */
-                document.getElementById("msg").innerText = "★ライスボール！！";
+                document.getElementById("aaaa").innerText = "★ライスボール！！";
+                p2.style = "visible";
                 body.classList.add("changed-bg30d");
                 break;
             case 5:     /* ランチパフェ */
-                document.getElementById("msg").innerText = "★ランチパフェ！！";
+                document.getElementById("aaaa").innerText = "メインディッシュのパフェでございます。ハンバーガーパフェをはじめとした、カツカレー、一日分の栄養素を盛り込んだパフェもございます！";
+                p2.style = "visible";
                 body.classList.add("changed-bg30e");
                 break;
             case 6:     /* パンケーキ */
-                document.getElementById("msg").innerText = "★パンケーキ！！";
+                document.getElementById("aaaa").innerText = "パンケーキなども取り揃えております。透明度の高い「くず餅」を使用した「黒どらやき」もおすすめです！！";
+                p2.style = "visible";
                 body.classList.add("changed-bg30f");
                 break;
             case 7:     /* パスタ */
-                document.getElementById("msg").innerText = "★パスタ！！";
+                document.getElementById("aaaa").innerText = "木苺のバタートーストをはじめ、1/100の確率で生まれる卵を使用したオムライス、透明のパスタなども用意しております。";
+                p2.style = "visible";
                 body.classList.add("changed-bg30g");
                 break;
         }
@@ -62,9 +73,56 @@
         body.classList.remove("changed-bg30f");
         body.classList.remove("changed-bg30g");
 
-        document.getElementById("msg").innerText = "当店の未来で流行しているメニューでございます、興味のある商品を選んでください。";
+        document.getElementById("msg03b").innerText = "当店の未来で流行しているメニューでございます、興味のある商品を選んでください。";
 
     }
+
+
+
+
+
+    /*
+        // 表示領域の幅を取得
+        window.addEventListener('resize', () => {
+            console.log(window.innerWidth);
+            const win_x = window.innerWidth;
+    
+            console.log(window.innerHeight);
+            const win_y = window.innerHeight;
+    
+        });
+    
+    */
+
+
+    // 現在時刻を取得して表示する
+    function Time() {
+        var realTime = new Date();
+        var hour = realTime.getHours();
+        var minutes = realTime.getMinutes();
+        var seconds = realTime.getSeconds();
+        var text = hour + ":" + minutes + ":" + seconds;
+        document.getElementById("real-time").innerHTML = text;
+    }
+    setInterval('Time()', 1000);
+
+
+    /*
+        // ウインドウサイズを取得する
+        // https://developer.mozilla.org/ja/docs/Web/API/Window/innerWidth
+
+    const heightOutput = document.querySelector("#height");
+    const widthOutput = document.querySelector("#width");
+
+    function updateSize() {
+        heightOutput.textContent = window.innerHeight;
+        widthOutput.textContent = window.innerWidth;
+    }
+
+    updateSize();
+    window.addEventListener("resize", updateSize);
+*/
+
 
 
 </script>
@@ -73,6 +131,7 @@
 
     <div class="bgimg03">
         <div class="owner03-img" onclick="bg03_back()"></div>
+        <font color="white">現在時刻は<span id="real-time"></span>です　空席あります</font>
 
         <ul class="container">
             <li><a href="index.html" class="topimage"></a></li>
@@ -81,27 +140,117 @@
             <li><a href="page04.html">店内ご案内</a></li>
             <li><a href="page05.html">店舗ご案内</a></li>
             <li><a href="page06.html">わたし達について</a></li>
+            <li><a href="https://mirai73.wordpress.com/"><img src="img/icon-smf.png" alt="" width="15%"></a></li>
         </ul>
 
         <div class="image-container">
             <img src="img/bg03a.png" alt="皿1" class="menu03a" onclick="toggleBackground(1)">
             <img src="img/bg03b.png" alt="皿2" class="menu03b" onclick="toggleBackground(2)">
             <img src="img/bg03c.png" alt="皿3" class="menu03c" onclick="toggleBackground(3)">
-            <img src="img/bg03d.png" alt="皿1" class="menu03d" onclick="toggleBackground(4)">
+            <!--                <img src="img/bg03d-.png" alt="皿1" class="menu03d" onclick="toggleBackground(4)">-->
             <img src="img/bg03e.png" alt="皿2" class="menu03e" onclick="toggleBackground(5)">
             <img src="img/bg03f.png" alt="皿3" class="menu03f" onclick="toggleBackground(6)">
             <img src="img/bg03g.png" alt="皿3" class="menu03g" onclick="toggleBackground(7)">
 
             <div class="msg03">
-                <p id="msg">
+                <p id="msg03b">
                     当店の未来で流行しているメニューでございます、興味のある商品を選んでください。
                 </p>
             </div>
-
         </div>
 
+        <div class="msg03a" hidden>
+            <p id="aaaa">
+            </p>
+        </div>
     </div>
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        //----- ここからJQuery
+        //表示物を画面サイズと同期させる
+
+        $(function () {
+            let width = $(window).width();
+            let height = $(window).height();
+
+            let width1 = width;
+            let height1 = height;
+
+            let width2 = width;
+            let height2 = height;
+
+            let width3 = width;
+            let height3 = height;
+
+            let width4 = width;
+            let height4 = height;
+
+            let width5 = width;
+            let height5 = height;
+
+            let width6 = width;
+            let height6 = height;
+
+            // 最初に丁度良い所に動かす
+            if (width < 500) { //幅をチェックする スマホ用
+                $(".menu03a").css({ "top": height * 0.2, "left": width * 0.3 });
+                $(".menu03b").css({ "top": height * 0.2, "left": width * 0.1 });
+                $(".menu03c").css({ "top": height * 0.2, "left": width * 0.55 });
+                $(".menu03e").css({ "top": height * 0.38, "left": width * 0.0 });
+                $(".menu03f").css({ "top": height * 0.5, "left": width * 0.3 });
+                $(".menu03g").css({ "top": height * 0.5, "left": width * 0.6 });
+            } else if (width < 780) {//タブレット
+                $(".menu03a").css({ "top": height * 0.2, "left": width * 0.3 });
+                $(".menu03b").css({ "top": height * 0.2, "left": width * 0.1 });
+                $(".menu03c").css({ "top": height * 0.2, "left": width * 0.55 });
+                $(".menu03e").css({ "top": height * 0.38, "left": width * 0.0 });
+                $(".menu03f").css({ "top": height * 0.5, "left": width * 0.3 });
+                $(".menu03g").css({ "top": height * 0.5, "left": width * 0.6 });
+            } else {//それ以上、PC
+                $(".menu03a").css({ "top": height1 * 0.2, "left": width1 * 0.3 });
+                $(".menu03b").css({ "top": height2 * 0.2, "left": width2 * 0.1 });
+                $(".menu03c").css({ "top": height3 * 0.2, "left": width3 * 0.55 });
+                $(".menu03e").css({ "top": height4 * 0.38, "left": width4 * 0.0 });
+                $(".menu03f").css({ "top": height5 * 0.5, "left": width5 * 0.3 });
+                $(".menu03g").css({ "top": height6 * 0.5, "left": width6 * 0.6 });
+            }
+
+        });
+
+        //リサイズされた場合も同様の処理をする
+        $(window).resize(function () {
+            let width = $(window).width();
+            let height = $(window).height();
+
+            if (width < 500) { //幅をチェックする スマホ用
+                $(".menu03a").css({ "top": height * 0.2, "left": width * 0.3 });
+                $(".menu03b").css({ "top": height * 0.2, "left": width * 0.1 });
+                $(".menu03c").css({ "top": height * 0.2, "left": width * 0.55 });
+                $(".menu03e").css({ "top": height * 0.38, "left": width * 0.0 });
+                $(".menu03f").css({ "top": height * 0.5, "left": width * 0.3 });
+                $(".menu03g").css({ "top": height * 0.5, "left": width * 0.6 });
+            } else if (width < 780) {//タブレット
+                $(".menu03a").css({ "top": height * 0.2, "left": width * 0.3 });
+                $(".menu03b").css({ "top": height * 0.2, "left": width * 0.1 });
+                $(".menu03c").css({ "top": height * 0.2, "left": width * 0.55 });
+                $(".menu03e").css({ "top": height * 0.38, "left": width * 0.0 });
+                $(".menu03f").css({ "top": height * 0.5, "left": width * 0.3 });
+                $(".menu03g").css({ "top": height * 0.5, "left": width * 0.6 });
+            } else {//それ以上、PC
+                $(".menu03a").css({ "top": height * 0.2, "left": width * 0.3 });
+                $(".menu03b").css({ "top": height * 0.2, "left": width * 0.1 });
+                $(".menu03c").css({ "top": height * 0.2, "left": width * 0.55 });
+                $(".menu03e").css({ "top": height * 0.38, "left": width * 0.0 });
+                $(".menu03f").css({ "top": height * 0.5, "left": width * 0.3 });
+                $(".menu03g").css({ "top": height * 0.5, "left": width * 0.6 });
+            }
+
+
+
+        });
+    </script>
 </body>
 
 </html>

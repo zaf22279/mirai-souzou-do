@@ -1,10 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="jp">
+
+<script type="text/javascript">
+    // 現在時刻を取得して表示する
+    function Time() {
+        var realTime = new Date();
+        var hour = realTime.getHours();
+        var minutes = realTime.getMinutes();
+        var seconds = realTime.getSeconds();
+        var text = hour + ":" + minutes + ":" + seconds;
+        document.getElementById("real-time").innerHTML = text;
+    }
+    setInterval('Time()', 1000);
+
+
+    // 動画要素を取得 (例: IDが'myVideo'の場合)
+    const videoElement = document.getElementById('myVideo');
+
+    // 動画プレイヤー全体を非表示にする
+    videoElement.style.display = 'none';
+
+    videoElement.addEventListener('ended', function () {
+        videoElement.style.display = 'none';
+    });
+
+    function resizeVideo() {
+        const video = document.getElementById('myVideo');
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+
+        // 動画のCSSを直接変更
+        video.style.width = windowWidth + 'px';
+        video.style.height = 'auto'; // 比率維持
+    }
+
+    // 初回実行とリサイズ時のイベント追加
+    window.addEventListener('load', resizeVideo);
+    window.addEventListener('resize', resizeVideo);
+
+
+
+
+</script>
+
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>未来創造堂-ABOUT</title>
 
     <!-- オリジナルCSS -->
     <link rel="stylesheet" href="style.css">
@@ -12,9 +55,17 @@
 </head>
 
 <body>
+    <!---
+    <div id="myVideo">
+        <video src="img/bg06.mp4" loop autoplay muted playsinline>
+        </video>
+    </div>
+--->
+    <img src="img/logo2.png" class="logo2">
     <div class="bgimg06">
 
-        <div class="owner06-img"></div>
+        <!---        <div class="owner06-img"></div>  -->
+        <div>現在時刻は<span id="real-time"></span>です　空席あります</div>
 
         <ul class="container">
             <li><a href="index.html" class="topimage"></a></li>
@@ -23,18 +74,22 @@
             <li><a href="page04.html">店内ご案内</a></li>
             <li><a href="page05.html">店舗ご案内</a></li>
             <li><a href="page06.html">わたし達について</a></li>
+            <li><a href="https://mirai73.wordpress.com/"><img src="img/icon-smf.png" alt="" width="15%"></a></li>
         </ul>
 
+        <img class="msg06" src="img/06msg.png">
+
+        <!---
         <div class="msg06">
             <p>
-                わたし達は 、未来を共にする大切な人とのコミュニケーションを、<BR>
+                わたし達は 、未来を共にする大切な人とのコミュニケーションを、
                 一番大事に考えております。<BR>
                 <BR>
-                そこで、年齢を問わず、手軽にコミュニケーションを交える場として、<BR>
+                そこで、年齢を問わず、手軽にコミュニケーションを交える場として、
                 このカフェを用意しました。<BR>
                 <BR>
-                会話の合間に、ちょっと近未来をイメージした食事をしながら、<BR>
-                これから先に待っている楽しい話を創造して盛り上がる、<BR>
+                会話の合間に、ちょっと近未来をイメージした食事をしながら、
+                これから先に待っている楽しい話を創造して盛り上がる、
                 そんな、ひと時を楽しんでいただけたら、わたし達も嬉しいです。<BR>
                 <BR>
                 わたし達の制服や店内の配色は私達の制服でもある、未来を創造しながら<BR>
@@ -43,14 +98,15 @@
                 <BR>
                 そんな「未来創造堂」を、これからもよろしくお願いいたします。<BR>
             </p>
-            <p class="font40px">未来創造堂株式会社</p>
-            <p class="font20px">info@mirai.souzou.do.jp</p>
+        <p class="font40px">未来創造堂株式会社</p>
+        <p class="font20px">info@mirai.souzou.do.jp</p>
+        -->
 
-            <!-- <div class="sign"></div> -->
-            <img src="img/sign.gif" class="sign">
-        </div>
-
+        <!-- <div class="sign"></div> -->
+        <img src=" img/sign.gif" class="sign">
     </div>
+
+
 
 </body>
 

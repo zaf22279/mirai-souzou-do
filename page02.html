@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="ja">
 
+<script type="text/javascript">
+    // 現在時刻を取得して表示する
+    function Time() {
+        var realTime = new Date();
+        var hour = realTime.getHours();
+        var minutes = realTime.getMinutes();
+        var seconds = realTime.getSeconds();
+        var text = hour + ":" + minutes + ":" + seconds;
+        document.getElementById("real-time").innerHTML = text;
+    }
+    setInterval('Time()', 1000);
+
+</script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>未来創造堂-INFORMATION</title>
 
     <!-- オリジナルCSS -->
     <link rel="stylesheet" href="style.css">
@@ -13,9 +27,10 @@
 
 <body>
 
-    <div class="bgimg020405">
+    <div class="bgimg02">
 
         <div class="owner02-img"></div>
+        <font color="white">現在時刻は<span id="real-time"></span>です　空席あります</font>
 
         <ul class="container">
             <li><a href="index.html" class="topimage"></a></li>
@@ -24,6 +39,7 @@
             <li><a href="page04.html">店内ご案内</a></li>
             <li><a href="page05.html">店舗ご案内</a></li>
             <li><a href="page06.html">わたし達について</a></li>
+            <li><a href="https://mirai73.wordpress.com/"><img src="img/icon-smf.png" alt="" width="15%"></a></li>
         </ul>
 
         <div class="msg02">
