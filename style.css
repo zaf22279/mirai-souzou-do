@@ -8,6 +8,9 @@
     /*リンク等の下線なくす  */
     color: inherit;
     list-style: none;
+
+    line-height: 2rem;
+
 }
 
 html {
@@ -28,28 +31,18 @@ img {
 }
 
 .bgimg01 {
-    /* トップ */
-    /* display: block; */
-    /* position: absolute; */
-
-    background-repeat: no-repeat;
-    /* 繰り返し表示しない */
-
+    /* 客のいる背景 */
     background-image: url("img/bg01new.gif");
     background-size: 100%;
+    background-repeat: no-repeat;   /* 繰り返し表示しない */
     /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
     background-attachment: fixed;
     /* 背景位置固定（スクロール無視） */
     width: 100%;
     height: 100dvh;
     position: relative;
-    /*
-  border: 2px solid;
-  color: blue;
 
-/*  animation: image_anime 5s ease infinite; /* 5秒のアニメーションを繰り返す */
-
-    /* width: clamp( 1080px, 100%, 1980px); */
+    overflow-y: hidden;
 }
 
 @keyframes image_anime {
@@ -93,6 +86,8 @@ img {
     /* border: 2px solid; */
     /*    color: blue;  */
     z-index: 1;
+
+    overflow-y: hidden;
 }
 
 
@@ -103,7 +98,8 @@ img {
     /* 繰り返し表示しない */
     background-image: url("img/bg020405.png");
     background-size: 100%;
-    background-attachment: fixed;
+
+    background-attachment: fixed;   /* ちょびスクロール防止 */
 
     /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
 
@@ -121,6 +117,7 @@ img {
     animation: image_anime2 0.01s ease infinite;
     /* 5秒のアニメーションを繰り返す */
 
+    overflow-y: hidden;
 }
 
 @keyframes image_anime2 {
@@ -186,7 +183,7 @@ img {
     width: 100%;
     height: 1080px;
 
-    background-position: 60% 32%;
+    background-position: 60% 20%;
     /*
     border: 2px solid;
     color: blue;
@@ -205,6 +202,9 @@ img {
     width: 100%;
     height: 100dvh;
     position: relative;
+
+    overflow-y: hidden;
+
 }
 
 .image-container {
@@ -555,7 +555,7 @@ img {
     /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
 
     width: 100%;
-    height: 1080px;
+    height: 100dvh;
 
     transition-duration: 1s;
 
@@ -566,6 +566,7 @@ img {
 
     .msg04a {
         /* サブメッセージを出す */
+       
         display: block;
     }
 
@@ -610,7 +611,7 @@ img {
     /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
 
     width: 100%;
-    height: 1080px;
+    height: 100dvh;
 
     transition-duration: 1s;
 
@@ -626,6 +627,7 @@ img {
 */
     .msg04a {
         /* サブメッセージを出す */
+        top: 80%;
         display: block;
     }
 
@@ -644,7 +646,7 @@ img {
     /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
 
     width: 100%;
-    height: 1080px;
+    height: 100dvh;
 
     .msg04 {
         /* メッセージを消す */
@@ -653,6 +655,7 @@ img {
 
     .msg04a {
         /* サブメッセージを出す */
+        top: 80%;
         display: block;
     }
 
@@ -698,12 +701,13 @@ img {
     /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
 
     width: 100%;
-    height: 1200px;
+    height: 100dvh;
 /*
     border: 2px solid;
     color: blue;
 */
-    }
+    overflow-y: hidden;
+}
 
 
 /************* 総合メニュー *****************/
@@ -737,6 +741,31 @@ img {
     /*    width: 100%; */
     /* left: 8px; */
     /* top: -20px; */
+
+}
+
+/*---- ワードプレス版に飛ぶアイコン -----*/
+.mobileimg{
+
+    position: absolute;
+
+    padding: 0% 8%;
+
+    background: url("img/icon-smf.png");
+    background-repeat: no-repeat;
+    /* 繰り返し表示しない */
+    /*    background-attachment: fixed;           /* 背景位置固定（スクロール無視） */
+
+    background-size: 20%;
+    /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+    background-position: center;
+    object-fit: cover;
+
+    left: 85%;
+    top: -80px;
+
+    bottom: -150%;
+
 
 }
 
@@ -784,7 +813,7 @@ a:hover {
 .msg {
     position: absolute;
 
-    right: 6%;
+    right: 3%;
     width: 30%;
 
     /*    font-size: 1rpm;  */
@@ -796,10 +825,10 @@ a:hover {
 
     /* opacity: 0.5; */
 
-    height: 900%;
+    height: auto;
     /* 紺色の下地の縦幅のサイズを指定    */
 
-    top: 120%;
+    top: 16%;
     /* 上からの位置 */
     padding: 8px;
 }
@@ -809,18 +838,19 @@ a:hover {
     background-color: rgba(0, 0, 80, 0.5);
 
     /*    font-size: 1rpm;  */
-/*
+
     text-align: left;
+/*
     color: white;
 */
 
     max-height: 1080px;
     /* 縦幅のサイズを指定    */
 
-    top: 30%;
+    top: 40%;
     /* 上からの位置 */
     width: 50%;
-    left: 40%;
+    left: 30%;
     height: 28%;
 
     padding: 8px;
@@ -838,6 +868,7 @@ a:hover {
     padding: 15px 10px;
     /* 枠中のテキストの左を空ける */
 
+
 }
 
 .msg03a {
@@ -854,7 +885,7 @@ a:hover {
     /* 上からの位置 */
     width: 70%;
     left: 4%;
-    height: 6rem;
+/*    height: 4em; */
 
     padding: 8px;
     /* 枠中のテキストの左を空ける */
@@ -887,21 +918,24 @@ a:hover {
 
 
 .msg04 {
-    position: relative;
+    position: absolute;
+
     background-color: rgba(0, 0, 80, 0.5);
 
     /*    font-size: 1rpm;  */
     text-align: left;
     color: white;
 
-    max-height: 1080px;
+
+
+/*    max-height: 1080px;
     /* 縦幅のサイズを指定    */
 
-    top: 34%;
+    top: 40%;
     /* 上からの位置 */
     width: 70%;
     left: 4%;
-    height: 22rem;
+    height: 40%;
 
     padding: 8px;
     /* 枠中のテキストの左を空ける */
@@ -909,16 +943,16 @@ a:hover {
 }
 
 .msg04a {
-    position: relative;
+    position: absolute;
     background-color: rgba(0, 0, 80, 0.5);
 
     text-align: left;
     color: white;
 
-    max-height: 1080px;
+/*    max-height: 1080px;
     /* 縦幅のサイズを指定    */
 
-    top: 60%;
+    bottom:50px;
     /* 上からの位置 */
     width: 70%;
     left: 4%;
@@ -926,7 +960,6 @@ a:hover {
 
     padding: 8px;
     /* 枠中のテキストの左を空ける */
-
 }
 
 .msg04>div>div>img:nth-child(1):hover {
@@ -956,16 +989,16 @@ gridp-row: 2/4;
 
 
 .msg05 {
-    position: relative;
+    position: absolute;
     background-color: rgba(0, 0, 80, 0.5);
 
     text-align: left;
     color: white;
 
-    max-height: 1080px;
+    max-height: 100dvh;
     /* 縦幅のサイズを指定    */
 
-    top: 65%;
+    top: 84%;
     /* 上からの位置（青のすかし枠） */
     width: 70%;
     left: 26%;
@@ -1040,9 +1073,9 @@ gridp-row: 2/4;
 
     width: 16%;
     /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
+    top: 90%;
     left: 44%;
     /*--------- X   */
-    bottom: -0%;
     /*--------- y   */
 
     z-index: 999;
@@ -1109,7 +1142,7 @@ gridp-row: 2/4;
 
     width: 100%;
     /* 画像の表示される横サイズ */
-    height: 100%;
+    height: 100dvh;
     /* 画像の表示される縦サイズ */
 
 
@@ -1133,7 +1166,7 @@ gridp-row: 2/4;
 
     width: 100%;
     /* 画像の表示される横サイズ */
-    height: 100%;
+    height: 100dvh;
     /* 画像の表示される縦サイズ */
 
 }
@@ -1173,7 +1206,7 @@ gridp-row: 2/4;
 
     width: 100%;
     /* 画像の表示される横サイズ */
-    height: 100%;
+    height: 100dvh;
     /* 画像の表示される縦サイズ */
 
 }
@@ -1197,7 +1230,7 @@ gridp-row: 2/4;
 
     width: 100%;
     /* 画像の表示される横サイズ */
-    height: 100%;
+    height: 100dvh;
     /* 画像の表示される縦サイズ */
 
 }
@@ -1231,51 +1264,56 @@ gridp-row: 2/4;
 .new-item01 {
     position: absolute;
 
-    background: url("img/item01.gif");
+    background: url("img/item01.gif");  /*ハンバーガーパフェ*/
     background-repeat: no-repeat;
     /* 繰り返し表示しない */
 
 
-    top: 65%;
-    left: 88%;
+    top: 120%;
+    left: 60%;
+    transform: translate(-50%,-50%);
 
     background-size: 100%;
 
     width: 8%;
-    height: 100%;
+    height: 100dvh;
 
 }
 
 .new-item02 {
     position: absolute;
 
-    background: url("img/item02.gif");
+    background: url("img/item02.gif");  /* レモンティー */
     background-repeat: no-repeat;
     /* 繰り返し表示しない */
 
-    top: 68%;
-    left: 70%;
 
-    background-size: 24%;
+    top: 122%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 
-    width: 40%;
-    height: 100%;
+
+    background-size: 100%;
+
+    width: 10%;     /* 画像サイズ */
+    height: 100dvh;
 }
 
 .new-item03 {
     position: absolute;
 
-    background: url("img/item03.gif");
+    background: url("img/item03.gif");  /* クリームソーダ */
     background-repeat: no-repeat;
     /* 繰り返し表示しない */
 
-    top: 70%;
-    left: 80%;
+    top: 126%;
+    left: 40%;
+    transform: translate(-50%,-50%);
 
-    background-size: 10%;
+    background-size: 100%;
 
-    width: 60%;
-    height: 100%;
+    width: 6%;
+    height: 100dvh;
 }
 
 /*************** フッター **************/
@@ -1285,11 +1323,11 @@ footer {
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
     /* 枠外の色 */
-    background-position: 90%;
+    background-position: 80%;
 
     text-align: left;
     /* 文字は左に表示 */
-    padding-left: 2rem;
+/*    padding-left: 2rem;   */
 
     top: 90%;
     /* 画面の上部からの位置 */
@@ -1298,10 +1336,181 @@ footer {
 
     width: 100%;
     /* 左右一杯に黒帯を引く */
-    height: 4em;
+    height: 3em;
     /* 帯の太さ */
 
     padding-top: 12px;
 
     z-index: 999;
 }
+
+/************* モバイル画面時 ***********/
+
+
+/*----------スマホ時のスタイル */
+@media screen and (max-width: 767px) {
+    .nav-menu {
+        display: none; /* 初期は非表示 */
+    }
+    .nav-menu.is-active {
+        display: block; /* クラスがついたら表示 */
+    }
+
+    .msg{       /* TOP */
+        top:46%;
+        left: 10%;
+        width: 80%;
+
+        overflow-y: auto; */
+
+    }
+
+    .new-item03 {   /* ソーダ */
+        top: 86%;
+    }
+    .new-item02 {   /* レモンティー*/
+        top: 85%;
+    }
+    .new-item01 {   /* バーガー*/
+        top: 84%;
+    }
+
+    .msg02{     /*  お知らせ */
+        top:60%;
+
+        overflow-y: auto; */
+    }
+
+    .msg03{     /*  メニュー */
+        width: 70%;
+        top:60%;
+
+        overflow-y: auto; */
+    }
+
+    .msg03a{    /* 商品アップ時 */
+        width: 70%;
+        top:auto;
+        bottom:-55%;
+    }
+
+
+    .msg04{     /* フロア */
+        top:50%;        
+    }
+
+    .changed-bg3.msg04a {
+        top: auto;      /* top を無効にする */
+        bottom: 30px;
+
+    }
+
+    .msg05{
+        top: auto;
+        bottom: 20%;
+    }
+    .map{
+        top: auto;
+        bottom: 0%;
+    }
+
+    .msg06{
+        top:50%;
+        overflow-y: auto; */
+    }
+
+
+}
+
+/*--------PC時のスタイル */
+@media screen and (min-width: 768px) {
+    .nav-menu {
+    display: block; /* PCでは常に表示 */
+    }
+    .hamburger {
+    display: none; /* PCではボタンを隠す */
+    }
+}
+
+/* チェックボックスを非表示にする */
+.drawer_hidden {
+    display: none;
+}
+
+/* ハンバーガーアイコンの設置スペース */
+.drawer_open {
+    display: flex;
+    height: 60px;
+    width: 60px;
+
+    left: 86%;
+
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;/* 重なり順を一番上にする */
+    cursor: pointer;
+}
+
+/* ハンバーガーメニューのアイコン */
+.drawer_open span,
+.drawer_open span:before,
+.drawer_open span:after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 25px;
+    border-radius: 3px;
+    background: white;
+    transition: 0.5s;
+    position: absolute;
+}
+
+/* 三本線の一番上の棒の位置調整 */
+.drawer_open span:before {
+    bottom: 8px;
+}
+
+/* 三本線の一番下の棒の位置調整 */
+.drawer_open span:after {
+    top: 8px;
+}
+
+/* アイコンがクリックされたら真ん中の線を透明にする */
+#drawer_input:checked ~ .drawer_open span {
+    background: rgba(255, 255, 255, 0);
+}
+
+/* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+#drawer_input:checked ~ .drawer_open span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+#drawer_input:checked ~ .drawer_open span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/* メニューのデザイン*/
+.nav_content {
+    width: 4%;
+    height: auto;
+    position: fixed;
+    top: 16%;
+    left: 100%; /* メニューを画面の外に飛ばす */
+    z-index: 99;
+    background: rgba(0, 0, 128, 0.5);
+    transition: .5s;
+}
+
+/* メニュー黒ポチを消す */
+.nav_list {
+    list-style: none;
+}
+
+/* アイコンがクリックされたらメニューを表示 */
+#drawer_input:checked ~ .nav_content {
+  left: 80%;/* メニューを画面に入れる */
+}
+

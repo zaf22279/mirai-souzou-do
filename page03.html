@@ -73,13 +73,8 @@
         body.classList.remove("changed-bg30f");
         body.classList.remove("changed-bg30g");
 
-        document.getElementById("msg03b").innerText = "当店の未来で流行しているメニューでございます、興味のある商品を選んでください。";
-
+        document.getElementById("msg03b").innerText = "当店の未来で流行しているメニューでございます。興味のある商品を選んでください。";
     }
-
-
-
-
 
     /*
         // 表示領域の幅を取得
@@ -106,6 +101,18 @@
     }
     setInterval('Time()', 1000);
 
+    window.addEventListener('resize', () => {
+        const width = window.innerWidth;
+        const navMenu = document.getElementById('js-nav-menu');
+        const hamburger = document.getElementById('js-hamburger');
+
+        // PCサイズ（768px以上）になったらクラスを削除
+        if (width >= 768) {
+            navMenu.classList.remove('is-active');
+            hamburger.classList.remove('is-active');
+        }
+    });
+
 
     /*
         // ウインドウサイズを取得する
@@ -122,26 +129,59 @@
     updateSize();
     window.addEventListener("resize", updateSize);
 */
-
-
-
 </script>
 
 <body>
 
     <div class="bgimg03">
         <div class="owner03-img" onclick="bg03_back()"></div>
-        <font color="white">現在時刻は<span id="real-time"></span>です　空席あります</font>
+        <div color="white">現在時刻は <span id="real-time"></span> です「空席あります」</div>
 
-        <ul class="container">
-            <li><a href="index.html" class="topimage"></a></li>
-            <li><a href="page02.html">お知らせ</a></li>
-            <li><a href="page03.html">メニュー</a></li>
-            <li><a href="page04.html">店内ご案内</a></li>
-            <li><a href="page05.html">店舗ご案内</a></li>
-            <li><a href="page06.html">わたし達について</a></li>
-            <li><a href="https://mirai73.wordpress.com/"><img src="img/icon-smf.png" alt="" width="15%"></a></li>
-        </ul>
+        <div class="hamburger" id="js-hamburger">
+
+            <header class="header">
+                <!-- ヘッダーロゴ -->
+                <!--                <div class="logo"><img src="img/top-menu.png" width="15%"></div>    -->
+
+                <!-- ハンバーガーメニュー部分 -->
+                <div class="nav">
+
+                    <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+                    <input id="drawer_input" class="drawer_hidden" type="checkbox">
+
+                    <!-- ハンバーガーアイコン -->
+                    <label for="drawer_input" class="drawer_open"><span></span></label>
+
+                    <!-- メニュー -->
+                    <nav class="nav_content">
+                        <ul class="nav_list">
+                            <li><a href="index.html">TOP</a></li>
+                            <li><a href="page02.html">INFO</a></li>
+                            <li><a href="page03.html">MENU</a></li>
+                            <li><a href="page04.html">FLOOR</a></li>
+                            <li><a href="page05.html">MAP</a></li>
+                            <li><a href="page06.html">ABOUT</a></li>
+                            <li><a href="https://mirai73.wordpress.com/">MOBILE</a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </header>
+
+
+        </div>
+        <nav class="nav-menu" id="js-nav-menu">
+
+            <ul class="container">
+                <li><a href="index.html" class="topimage"></a></li>
+                <li><a href="page02.html">お知らせ</a></li>
+                <li><a href="page03.html">メニュー</a></li>
+                <li><a href="page04.html">店内ご案内</a></li>
+                <li><a href="page05.html">店舗ご案内</a></li>
+                <li><a href="page06.html">わたし達について</a></li>
+                <li><a href="https://mirai73.wordpress.com/" class="mobileimg"></a></li>
+            </ul>
+        </nav>
 
         <div class="image-container">
             <img src="img/bg03a.png" alt="皿1" class="menu03a" onclick="toggleBackground(1)">
@@ -172,83 +212,186 @@
         //表示物を画面サイズと同期させる
 
         $(function () {
-            let width = $(window).width();
-            let height = $(window).height();
+            //            let width = $(window).width();
+            //            let height = $(window).height();
 
-            let width1 = width;
-            let height1 = height;
+            let width = $(window).innerWidth();
+            let height = $(window).innerHeight();
 
-            let width2 = width;
-            let height2 = height;
+            let width1 = $(window).innerWidth();
+            let height1 = $(window).innerHeight();
 
-            let width3 = width;
-            let height3 = height;
+            let width2 = $(window).innerWidth();
+            let height2 = $(window).innerHeight();
 
-            let width4 = width;
-            let height4 = height;
+            let width3 = $(window).innerWidth();
+            let height3 = $(window).innerHeight();
 
-            let width5 = width;
-            let height5 = height;
+            let width4 = $(window).innerWidth();
+            let height4 = $(window).innerHeight();
 
-            let width6 = width;
-            let height6 = height;
+            let width5 = $(window).innerWidth();
+            let height5 = $(window).innerHeight();
+
+            let width6 = $(window).innerWidth();
+            let height6 = $(window).innerHeight();
 
             // 最初に丁度良い所に動かす
-            if (width < 500) { //幅をチェックする スマホ用
-                $(".menu03a").css({ "top": height * 0.2, "left": width * 0.3 });
-                $(".menu03b").css({ "top": height * 0.2, "left": width * 0.1 });
-                $(".menu03c").css({ "top": height * 0.2, "left": width * 0.55 });
-                $(".menu03e").css({ "top": height * 0.38, "left": width * 0.0 });
-                $(".menu03f").css({ "top": height * 0.5, "left": width * 0.3 });
-                $(".menu03g").css({ "top": height * 0.5, "left": width * 0.6 });
-            } else if (width < 780) {//タブレット
-                $(".menu03a").css({ "top": height * 0.2, "left": width * 0.3 });
-                $(".menu03b").css({ "top": height * 0.2, "left": width * 0.1 });
-                $(".menu03c").css({ "top": height * 0.2, "left": width * 0.55 });
-                $(".menu03e").css({ "top": height * 0.38, "left": width * 0.0 });
-                $(".menu03f").css({ "top": height * 0.5, "left": width * 0.3 });
-                $(".menu03g").css({ "top": height * 0.5, "left": width * 0.6 });
+            /*
+                        if (width < 500) { //幅をチェックする スマホ用
+                            $(".menu03a").css({ "top": height * 0.2, "left": width * 0.3 });
+                            $(".menu03b").css({ "top": height * 0.2, "left": width * 0.1 });
+                            $(".menu03c").css({ "top": height * 0.2, "left": width * 0.55 });
+                            $(".menu03e").css({ "top": height * 0.38, "left": width * 0.0 });
+                            $(".menu03f").css({ "top": height * 0.5, "left": width * 0.26 });
+                            $(".menu03g").css({ "top": height * 0.5, "left": width * 0.56 });
+                        } else if (width < 780) {//タブレット
+                            $(".menu03a").css({ "top": height * 0.2, "left": width * 0.3 });
+                            $(".menu03b").css({ "top": height * 0.2, "left": width * 0.1 });
+                            $(".menu03c").css({ "top": height * 0.2, "left": width * 0.55 });
+                            $(".menu03e").css({ "top": height * 0.38, "left": width * 0.0 });
+                            $(".menu03f").css({ "top": height * 0.5, "left": width * 0.26 });
+                            $(".menu03g").css({ "top": height * 0.5, "left": width * 0.56 });
+            */
+            if (width < 768) {//タブレット
+
+                let width1 = width;
+                let height1 = height * (width / 1920);
+                let width2 = width;
+                let height2 = height * (width / 1920);
+                let width3 = width;
+                let height3 = height * (width / 1920);
+                let width4 = width;
+                let height4 = height * (width / 1920);
+                let width5 = width;
+                let height5 = height * (width / 1920);
+                let width6 = width;
+                let height6 = height * (width / 1920);
+
+
+                $(".menu03a").css({ "top": height1 * 0.38, "left": width1 * 0.3 });
+                $(".menu03b").css({ "top": height2 * 0.48, "left": width2 * 0.1 });
+                $(".menu03c").css({ "top": height3 * 0.45, "left": width3 * 0.55 });
+                $(".menu03e").css({ "top": height4 * 0.78, "left": width4 * 0.0 });
+                $(".menu03f").css({ "top": height5 * 0.88, "left": width5 * 0.3 });
+                $(".menu03g").css({ "top": height6 * 0.95, "left": width6 * 0.64 });
+
             } else {//それ以上、PC
-                $(".menu03a").css({ "top": height1 * 0.2, "left": width1 * 0.3 });
-                $(".menu03b").css({ "top": height2 * 0.2, "left": width2 * 0.1 });
-                $(".menu03c").css({ "top": height3 * 0.2, "left": width3 * 0.55 });
-                $(".menu03e").css({ "top": height4 * 0.38, "left": width4 * 0.0 });
-                $(".menu03f").css({ "top": height5 * 0.5, "left": width5 * 0.3 });
-                $(".menu03g").css({ "top": height6 * 0.5, "left": width6 * 0.6 });
-            }
+
+                let width1 = width;
+                let height1 = height * (width / 1920);
+                let width2 = width;
+                let height2 = height * (width / 1920);
+                let width3 = width;
+                let height3 = height * (width / 1920);
+                let width4 = width;
+                let height4 = height * (width / 1920);
+                let width5 = width;
+                let height5 = height * (width / 1920);
+                let width6 = width;
+                let height6 = height * (width / 1920);
+
+                // デスクトップ時に縦が長くなった場合
+                let w = width / height;
+                if (w <= 1.7) {
+                    /*
+                                        let height1 = 0;
+                                        let height2 = 0;
+                                        let height3 = 0;
+                                        let height4 = 0;
+                                        let height5 = 0;
+                                        let height6 = 0;
+                    */
+                }
+
+                $(".menu03a").css({ "top": height1 * 0.3, "left": width1 * 0.3 });
+                $(".menu03b").css({ "top": height2 * 0.3, "left": width2 * 0.1 });
+                $(".menu03c").css({ "top": height3 * 0.3, "left": width3 * 0.55 });
+                $(".menu03e").css({ "top": height4 * 0.6, "left": width4 * -0.02 });
+                $(".menu03f").css({ "top": height5 * 0.7, "left": width5 * 0.24 });
+                $(".menu03g").css({ "top": height6 * 0.7, "left": width6 * 0.55 });
+
+            };
 
         });
 
         //リサイズされた場合も同様の処理をする
         $(window).resize(function () {
-            let width = $(window).width();
-            let height = $(window).height();
+            let width = $(window).innerWidth();
+            let height = $(window).innerHeight();
+            /*
+                        if (width < 500) { //幅をチェックする スマホ用
+                            $(".menu03a").css({ "top": height * 0.2, "left": width * 0.3 });
+                            $(".menu03b").css({ "top": height * 0.2, "left": width * 0.1 });
+                            $(".menu03c").css({ "top": height * 0.2, "left": width * 0.55 });
+                            $(".menu03e").css({ "top": height * 0.38, "left": width * 0.0 });
+                            $(".menu03f").css({ "top": height * 0.5, "left": width * 0.26 });
+                            $(".menu03g").css({ "top": height * 0.5, "left": width * 0.56 });
+                        } else if (width < 780) {//タブレット
+                            $(".menu03a").css({ "top": height * 0.2, "left": width * 0.3 });
+                            $(".menu03b").css({ "top": height * 0.2, "left": width * 0.1 });
+                            $(".menu03c").css({ "top": height * 0.2, "left": width * 0.55 });
+                            $(".menu03e").css({ "top": height * 0.38, "left": width * 0.0 });
+                            $(".menu03f").css({ "top": height * 0.5, "left": width * 0.26 });
+                            $(".menu03g").css({ "top": height * 0.5, "left": width * 0.56 });
+            */
+            if (width < 768) {//タブレット
 
-            if (width < 500) { //幅をチェックする スマホ用
-                $(".menu03a").css({ "top": height * 0.2, "left": width * 0.3 });
-                $(".menu03b").css({ "top": height * 0.2, "left": width * 0.1 });
-                $(".menu03c").css({ "top": height * 0.2, "left": width * 0.55 });
-                $(".menu03e").css({ "top": height * 0.38, "left": width * 0.0 });
-                $(".menu03f").css({ "top": height * 0.5, "left": width * 0.3 });
-                $(".menu03g").css({ "top": height * 0.5, "left": width * 0.6 });
-            } else if (width < 780) {//タブレット
-                $(".menu03a").css({ "top": height * 0.2, "left": width * 0.3 });
-                $(".menu03b").css({ "top": height * 0.2, "left": width * 0.1 });
-                $(".menu03c").css({ "top": height * 0.2, "left": width * 0.55 });
-                $(".menu03e").css({ "top": height * 0.38, "left": width * 0.0 });
-                $(".menu03f").css({ "top": height * 0.5, "left": width * 0.3 });
-                $(".menu03g").css({ "top": height * 0.5, "left": width * 0.6 });
+                let width1 = width;
+                let height1 = height * (width / 1920);
+                let width2 = width;
+                let height2 = height * (width / 1920);
+                let width3 = width;
+                let height3 = height * (width / 1920);
+                let width4 = width;
+                let height4 = height * (width / 1920);
+                let width5 = width;
+                let height5 = height * (width / 1920);
+                let width6 = width;
+                let height6 = height * (width / 1920);
+
+                $(".menu03a").css({ "top": height1 * 0.38, "left": width1 * 0.3 });
+                $(".menu03b").css({ "top": height2 * 0.48, "left": width2 * 0.1 });
+                $(".menu03c").css({ "top": height3 * 0.45, "left": width3 * 0.55 });
+                $(".menu03e").css({ "top": height4 * 0.78, "left": width4 * 0.0 });
+                $(".menu03f").css({ "top": height5 * 0.88, "left": width5 * 0.3 });
+                $(".menu03g").css({ "top": height6 * 0.95, "left": width6 * 0.64 });
+
             } else {//それ以上、PC
-                $(".menu03a").css({ "top": height * 0.2, "left": width * 0.3 });
-                $(".menu03b").css({ "top": height * 0.2, "left": width * 0.1 });
-                $(".menu03c").css({ "top": height * 0.2, "left": width * 0.55 });
-                $(".menu03e").css({ "top": height * 0.38, "left": width * 0.0 });
-                $(".menu03f").css({ "top": height * 0.5, "left": width * 0.3 });
-                $(".menu03g").css({ "top": height * 0.5, "left": width * 0.6 });
-            }
 
+                let width1 = width;
+                let height1 = height * (width / 1920);
+                let width2 = width;
+                let height2 = height * (width / 1920);
+                let width3 = width;
+                let height3 = height * (width / 1920);
+                let width4 = width;
+                let height4 = height * (width / 1920);
+                let width5 = width;
+                let height5 = height * (width / 1920);
+                let width6 = width;
+                let height6 = height * (width / 1920);
 
+                // デスクトップ時に縦が長くなった場合
+                let w = width / height;
+                if (w <= 1.7) {
+                    /*
+                                        let height1 = 1;
+                                        let height2 = 1;
+                                        let height3 = 1;
+                                        let height4 = 1;
+                                        let height5 = 1;
+                                        let height6 = 1;
+                    */
+                }
 
+                $(".menu03a").css({ "top": height1 * 0.3, "left": width1 * 0.3 });
+                $(".menu03b").css({ "top": height2 * 0.3, "left": width2 * 0.1 });
+                $(".menu03c").css({ "top": height3 * 0.3, "left": width3 * 0.55 });
+                $(".menu03e").css({ "top": height4 * 0.6, "left": width4 * -0.02 });
+                $(".menu03f").css({ "top": height5 * 0.7, "left": width5 * 0.24 });
+                $(".menu03g").css({ "top": height6 * 0.7, "left": width6 * 0.55 });
+            };
         });
     </script>
 </body>

@@ -13,6 +13,18 @@
     }
     setInterval('Time()', 1000);
 
+    window.addEventListener('resize', () => {
+        const width = window.innerWidth;
+        const navMenu = document.getElementById('js-nav-menu');
+        const hamburger = document.getElementById('js-hamburger');
+
+        // PCサイズ（768px以上）になったらクラスを削除
+        if (width >= 768) {
+            navMenu.classList.remove('is-active');
+            hamburger.classList.remove('is-active');
+        }
+    });
+
 </script>
 
 
@@ -55,32 +67,66 @@
 
     <!-- オリジナルCSS -->
     <link rel="stylesheet" href="style.css">
+
+
 </head>
 
 <body>
-
     <div class="bgimg01">
-        <div color="white">現在時刻は<span id="real-time"></span>です　空席あります</div>
 
-        <!--        <div class="owner01-img"></div> -->
-        <ul class="container">
-            <li><a href="index.html" class="topimage"></a></li>
-            <li><a href="page02.html">お知らせ</a></li>
-            <li><a href="page03.html">メニュー</a></li>
-            <li><a href="page04.html">店内ご案内</a></li>
-            <li><a href="page05.html">店舗ご案内</a></li>
-            <li><a href="page06.html">わたし達について</a></li>
-            <li><a href="https://mirai73.wordpress.com/"><img src="img/icon-smf.png" alt="" width="15%"></a></li>
+        <div color="white">現在時刻は <span id="real-time"></span> です「空席あります」</div>
+        <div class="hamburger" id="js-hamburger">
 
-            <div class="msg">
-                <div style="text-align:center">
-                    <img src="img/logo.png" alt="未来創造堂" width="80%">
-                    <img src="img/bg01-moji.png" alt="未来創造堂" width="100%">
+            <header class="header">
+                <!-- ヘッダーロゴ -->
+                <!--                <div class="logo"><img src="img/top-menu.png" width="15%"></div>    -->
+
+                <!-- ハンバーガーメニュー部分 -->
+                <div class="nav">
+
+                    <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+                    <input id="drawer_input" class="drawer_hidden" type="checkbox">
+
+                    <!-- ハンバーガーアイコン -->
+                    <label for="drawer_input" class="drawer_open"><span></span></label>
+
+                    <!-- メニュー -->
+                    <nav class="nav_content">
+                        <ul class="nav_list">
+                            <li><a href="index.html">TOP</a></li>
+                            <li><a href="page02.html">INFO</a></li>
+                            <li><a href="page03.html">MENU</a></li>
+                            <li><a href="page04.html">FLOOR</a></li>
+                            <li><a href="page05.html">MAP</a></li>
+                            <li><a href="page06.html">ABOUT</a></li>
+                            <li><a href="https://mirai73.wordpress.com/">MOBILE</a></li>
+                        </ul>
+                    </nav>
+
                 </div>
+            </header>
+
+
+        </div>
+        <nav class="nav-menu" id="js-nav-menu">
+            <!--        <div class="owner01-img"></div> -->
+            <ul class="container">
+                <li><a href="index.html" class="topimage"></a></li>
+                <li><a href="page02.html">お知らせ</a></li>
+                <li><a href="page03.html">メニュー</a></li>
+                <li><a href="page04.html">店内ご案内</a></li>
+                <li><a href="page05.html">店舗ご案内</a></li>
+                <li><a href="page06.html">わたし達について</a></li>
+                <li><a href="https://mirai73.wordpress.com/" class="mobileimg"></a></li>
+            </ul>
+        </nav>
+
+        <div class="msg">
+            <div style="text-align:center">
+                <img src="img/logo.png" alt="未来創造堂" width="80%">
+                <img src="img/bg01-moji.png" alt="未来創造堂" width="100%">
             </div>
-
-        </ul>
-
+        </div>
 
         <!--
             <p>
@@ -97,11 +143,7 @@
                 ちょっと先の未来の話をしてみませんか？
             </p>
         -->
-
-
-
         <!--        <img src="img/owner01.gif" style="position:absolute;bottom:0%;left:-20%;" width="60%">-->
-
 
         <div class="new-item01"></div>
         <div class="new-item02"></div>

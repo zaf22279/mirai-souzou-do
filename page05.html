@@ -13,7 +13,50 @@
     }
     setInterval('Time()', 1000);
 
+    window.addEventListener('resize', () => {
+        const width = window.innerWidth;
+        const navMenu = document.getElementById('js-nav-menu');
+        const hamburger = document.getElementById('js-hamburger');
+
+        // PCサイズ（768px以上）になったらクラスを削除
+        if (width >= 768) {
+            navMenu.classList.remove('is-active');
+            hamburger.classList.remove('is-active');
+        }
+    });
 </script>
+
+<style type="text/css">
+    .scroll {
+        margin: auto;
+        width: 100%;
+        font-size: 140%;
+        line-height: 1.5em;
+        text-align: center;
+        /* border: 1px solid #666; */
+        color: #fff;
+        /* background: #fff; */
+        overflow: hidden;
+    }
+
+    .scroll span {
+        display: inline-block;
+        padding-left: 100%;
+        white-space: nowrap;
+        /* line-height: 1em; */
+        animation: scrollAnime 10s linear infinite;
+    }
+
+    @keyframes scrollAnime {
+        0% {
+            transform: translateX(0)
+        }
+
+        100% {
+            transform: translateX(-100%)
+        }
+    }
+</style>
 
 <head>
     <meta charset="UTF-8">
@@ -29,10 +72,42 @@
 
     <div class="bgimg020405">
         <!--    <img src="img/05map.gif" alt="地図" width="40%"> -->
-        <div class="map">
+        <div class="owner05-img"></div>
+        <div color="white">現在時刻は <span id="real-time"></span> です「空席あります」</div>
 
-            <div class="owner05-img"></div>
-            <font color="white">現在時刻は<span id="real-time"></span>です　空席あります</font>
+        <div class="hamburger" id="js-hamburger">
+
+            <header class="header">
+                <!-- ヘッダーロゴ -->
+                <!--                <div class="logo"><img src="img/top-menu.png" width="15%"></div>    -->
+
+                <!-- ハンバーガーメニュー部分 -->
+                <div class="nav">
+
+                    <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+                    <input id="drawer_input" class="drawer_hidden" type="checkbox">
+
+                    <!-- ハンバーガーアイコン -->
+                    <label for="drawer_input" class="drawer_open"><span></span></label>
+
+                    <!-- メニュー -->
+                    <nav class="nav_content">
+                        <ul class="nav_list">
+                            <li><a href="index.html">TOP</a></li>
+                            <li><a href="page02.html">INFO</a></li>
+                            <li><a href="page03.html">MENU</a></li>
+                            <li><a href="page04.html">FLOOR</a></li>
+                            <li><a href="page05.html">MAP</a></li>
+                            <li><a href="page06.html">ABOUT</a></li>
+                            <li><a href="https://mirai73.wordpress.com/">MOBILE</a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </header>
+        </div>
+
+        <nav class="nav-menu" id="js-nav-menu">
 
             <ul class="container">
                 <li><a href="index.html" class="topimage"></a></li>
@@ -41,18 +116,22 @@
                 <li><a href="page04.html">店内ご案内</a></li>
                 <li><a href="page05.html">店舗ご案内</a></li>
                 <li><a href="page06.html">わたし達について</a></li>
-                <li><a href="https://mirai73.wordpress.com/"><img src="img/icon-smf.png" alt="" width="15%"></a></li>
+                <li><a href="https://mirai73.wordpress.com/" class="mobileimg"></a></li>
+                </li>
             </ul>
+        </nav>
 
-            <div class="msg05">
-                <p>
-                    駅「未来駅」より、徒歩5分が、わたし達の店舗になります。<br>
-                    営業時間は、日曜日と祝日の 16:00～20:00 の4時間だけでございます。
-                </p>
-            </div>
+        <div class="map">
+        </div>
 
+        <div class="msg05">
+            <p>
+                駅「未来駅」より、徒歩5分が、わたし達の店舗になります。<br>
+                営業時間は、日曜日と祝日の 16:00～20:00 の4時間だけでございます。
+            </p>
         </div>
     </div>
+
 
 </body>
 
