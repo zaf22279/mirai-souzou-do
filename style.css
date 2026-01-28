@@ -1384,12 +1384,12 @@ footer {
         display: block; /* クラスがついたら表示 */
     }
 
-    .msg{       /* TOP */
+    .msg {       /* TOP */
         top:46%;
         left: 10%;
         width: 80%;
 
-        overflow-y: scroll; */
+        overflow-y: auto; */
 
     }
 
