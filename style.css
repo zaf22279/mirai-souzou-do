@@ -13,6 +13,15 @@
 
 }
 
+
+img {
+  -webkit-user-select: none; /* Chrome, Safari, Opera */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* Internet Explorer/Edge */
+  user-select: none;         /* Standard */
+}
+
+
 html {
     background-attachment: fixed;
     /* 背景位置固定（スクロール無視） */
@@ -140,19 +149,19 @@ img {
 
 /**** 背景でビデオ再生用 *****/
 .video-container {
-    position: relative;
+    position: absolute;
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     /* 画面の高さ */
     overflow: hidden;
 }
 
 .back-video {
-    position: absolute;
+
+    position: fixed;
     right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
+    top: 0;
+    width: 100%;
     z-index: -1;
     /* コンテンツの下に配置 */
     object-fit: cover;
@@ -225,7 +234,19 @@ img {
     width: 32%;
     left: 32%;
     top: 20%;
+
+    animation: menu_anime 2.00s ease infinite;
 }
+@keyframes menu_anime {
+    0%{
+    }
+    50% {
+    filter: brightness(1.4);
+    }
+    100%{
+    }
+}
+
 
 .menu03a:hover {
     /* 光る */
@@ -283,6 +304,7 @@ img {
     width: 27%;
     left: 10%;
     top: 28%;
+    animation: menu_anime 2.00s ease infinite;
 }
 
 .menu03b:hover {
@@ -326,6 +348,7 @@ img {
     width: 30%;
     left: 56%;
     top: 20%;
+    animation: menu_anime 2.00s ease infinite;
 }
 
 .menu03c:hover {
@@ -370,6 +393,7 @@ img {
     /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
     left: 68%;
     top: 40%;
+    animation: menu_anime 2.00s ease infinite;
 }
 
 .menu03d:hover {
@@ -414,6 +438,7 @@ img {
     width: 36%;
     left: 0%;
     top: 42%;
+    animation: menu_anime 2.00s ease infinite;
 }
 
 .menu03e:hover {
@@ -458,6 +483,7 @@ img {
     width: 31%;
     left: 28%;
     top: 50%;
+    animation: menu_anime 2.00s ease infinite;
 }
 
 .menu03f:hover {
@@ -502,6 +528,8 @@ img {
     width: 24%;
     left: 58%;
     top: 50%;
+    animation: menu_anime 2.00s ease infinite;
+
 }
 
 .menu03g:hover {
@@ -718,7 +746,7 @@ img {
 
     padding: 0% 8%;
 
-    background: url("img/top-menu.png");
+    background: url("img/top-menu.gif");
     background-repeat: no-repeat;
     /* 繰り返し表示しない */
     /*    background-attachment: fixed;           /* 背景位置固定（スクロール無視） */
@@ -1356,25 +1384,12 @@ footer {
         display: block; /* クラスがついたら表示 */
     }
 
-    .topimage{
-
-        background: url("img/top-menu.png");
-        background-repeat: no-repeat;*/
-
-        background-size: 100%;
-        /* 縦横比を保ったまま、要素全体に収まるように縮小または拡大*/
-        background-position: center;
-        object-fit: cover;
-
-    }
-
-
     .msg{       /* TOP */
         top:46%;
         left: 10%;
         width: 80%;
 
-        overflow-y: auto; */
+        overflow-y: scroll; */
 
     }
 
@@ -1510,7 +1525,7 @@ footer {
     width: 4%;
     height: auto;
     position: fixed;
-    top: 16%;
+    top: 12%;
     left: 100%; /* メニューを画面の外に飛ばす */
     z-index: 99;
     background: rgba(0, 0, 128, 0.5);
